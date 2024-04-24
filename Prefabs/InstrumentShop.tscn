@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3mbp8hyvw7c2"]
+
+[ext_resource type="Texture2D" uid="uid://dgl4kdhufsh0r" path="res://Resources/DefaultTexture.png" id="1_bx7g1"]
+[ext_resource type="Script" path="res://Source/InstrumentShop.gd" id="1_hwwv8"]
+
+[node name="VBox" type="VBoxContainer"]
+script = ExtResource("1_hwwv8")
+instrumentID = null
+
+[node name="InfoContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="InfoContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_bx7g1")
+expand_mode = 2
+
+[node name="InstrumentNameLabel" type="Label" parent="InfoContainer"]
+layout_mode = 2
+text = "InstrumentName"
+
+[node name="BuyContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PricePriceLabel" type="Label" parent="BuyContainer"]
+layout_mode = 2
+text = "Price: "
+
+[node name="PriceLabel" type="Label" parent="BuyContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="BuyButton" type="Button" parent="BuyContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="OwnedContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NumberOwnedLabel" type="Label" parent="OwnedContainer"]
+layout_mode = 2
+text = "0 Owned"
+
+[connection signal="pressed" from="BuyContainer/BuyButton" to="." method="_on_buy_button_pressed"]
